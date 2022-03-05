@@ -1,0 +1,129 @@
+body {
+    background-color: bisque;
+    width: 1579px; /*Largeur de la feuille*/
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    color: black;
+    text-align: center;
+    text-decoration: underline red;
+}
+
+h2 {
+    color: black;
+    text-align: center;
+    font-style: italic;
+}
+p{
+    color: black;
+    text-align: center;
+}
+
+img{
+    display: block;
+    margin: auto;
+    border: transparent solid;
+}
+
+nav{
+    width: 120%; /*largeur du menu*/
+    height: 70px;
+    background-color: black;
+    position: sticky;
+    font-size: 30px;
+}
+
+nav ul{
+    list-style-type: none; 
+}
+
+nav ul li{
+    float: left;
+    width: 20%; 
+    position: relative; /*Position du sous menu*/
+}
+nav ul::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+nav a{
+    display: block;
+    text-decoration: none;
+    padding: 16px 0px;
+    transition: all 0.5s ease-out;
+}
+
+nav a:hover, a:focus{
+    color: red;
+    background-color: white;
+    border-bottom: none;
+}
+.deroulant {
+    color: red;
+    text-align: center;
+    border-bottom: none;
+    border: white solid;
+}
+/*Sous menu*/
+.sous{
+    display: none;
+    background-color: white;
+    position: absolute; /*Position du sous menu*/
+    width: 100%;
+    z-index: 1000; 
+    /*définit le « z-order » (NdT : « ordre z » n'est pas usité) d'un élément positionné et de ses éléments enfants ou de ses éléments flexibles.
+    Lorsque des éléments se chevauchent, le z-order détermine l'ordre des différentes couches que formeront les éléments. 
+    Généralement, un élément couvrira un autre élément si sa valeur de z-index est supérieure à celle du deuxième élément.*/
+    font-size: 20px;
+}
+
+/*Définie que l'ensemble de la navigateur est un block*/
+nav > ul li:hover .sous{
+    display: block;
+}
+
+
+/*Présentation du sous-menu côté texte*/
+.sous li{
+    float: none; /*indique qu'un élément doit être retiré du flux normal et doit être placé sur le côté droit ou sur le côté gauche de son conteneur*/
+    width: 100%;
+    text-align: left;
+}
+
+/*Présentation du sous-menu (taille des bordure et barre en-dessous du texte)*/
+.sous a{
+    padding: 10px 16px; 
+    border-bottom: none; /*Bordure en-dessous du texte dans le sous menu*/
+    color: black;
+}
+
+/*Partie quand on passe avec la souris dans le sous-menu*/
+.sous a:hover{
+    border-bottom: none; /*Bordure en-dessous du texte dans le sous menu quand on passe dessus avec la souris grâce au (:hover)*/
+}
+
+/*Partie cosmétique visible dans le menu principale*/
+.deco > a::after{ /*Ajoute des élément cosmétique (flèche par exemple) après le lien (::after) et / ou avant si on met (::before)*/
+    content:" ▼";
+    font-size: 15px;
+}
+
+pre{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.def{
+    border: red solid;
+    width: 1350px;
+    margin-left: 8%;
+}
+span{
+    visibility: hidden;
+}
+
+img:hover + span {
+    visibility: visible;
+}

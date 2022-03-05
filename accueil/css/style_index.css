@@ -1,0 +1,180 @@
+/*Paramètre de la page*/
+
+body {
+    background: bisque;
+    /*Fonds de la page*/
+    width: 83%;
+    /*largeur de la page*/
+}
+
+
+/*Titre 1 du body*/
+
+h1 {
+    color: black;
+    /*couleur du tritre*/
+    text-align: center;
+    /*aligne au centre le titre*/
+}
+
+
+/*Paragraphe du body*/
+
+p {
+    color: black;
+    /*couleur du paragraphe*/
+    font-size: 18px;
+    /*police du paragraphe*/
+    text-align: center;
+    /*aligne au centre le paragraphe*/
+}
+
+
+/*Présentation du menu et sous-menu*/
+
+nav {
+    width: 120%;
+    /*largeur du menu*/
+    height: 70px;
+    /*Hauteur du menu*/
+    background-color: black;
+    /*couleur du fonds du menu*/
+    position: sticky;
+    /*position du menu : La position sticky est le fait de pouvoir maintenir la position d'un objet à un endroit précis dès que celui-ci devient hors de portée. Entendez par là une réaction au scroll.
+    Ce qui sous-entends que cet objet a une position initiale et une position 'en mode sticky'.*/
+    font-size: 30px;
+    /*police d'écriture du texte du menu*/
+}
+
+
+/*Gestion des puces du menu*/
+
+nav ul {
+    list-style-type: none;
+    /*"list-style-type" permet de définir l'apparence de la puce d'un élément de la liste;Vue que list-style-type:none alors je n'affiche pas la puce*/
+}
+
+
+/*Présentation du menu*/
+
+nav ul li {
+    float: left;
+    width: 20%;
+    /*Largeur du meni*/
+    position: relative;
+    /*Position du sous menu*/
+}
+
+
+/*Animation du menu*/
+
+nav a {
+    display: block;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    padding: 16px 0px;
+    transition: all 0.5s ease-out;
+}
+
+
+/*Menu  de navigation où on passe avec la souris*/
+
+nav a:hover,
+a:focus {
+    color: red;
+    background-color: white;
+    border-bottom: none;
+}
+
+
+/*Présentation du menu déroulant*/
+
+.deroulant {
+    color: red;
+    text-align: center;
+    border: white solid;
+}
+
+
+/*Sous menu*/
+
+.sous {
+    display: none;
+    box-shadow: 0px 1px 2px black;
+    /*Ajoute des ombres à la boîte d'un élément*/
+    background-color: white;
+    position: absolute;
+    /*Position du sous menu*/
+    width: 100%;
+    z-index: 1000;
+    /*définit le « z-order » (NdT : « ordre z » n'est pas usité) d'un élément positionné et de ses éléments enfants ou de ses éléments flexibles.
+    Lorsque des éléments se chevauchent, le z-order détermine l'ordre des différentes couches que formeront les éléments. 
+    Généralement, un élément couvrira un autre élément si sa valeur de z-index est supérieure à celle du deuxième élément.*/
+    font-size: 20px;
+}
+
+
+/*Définie que l'ensemble de la navigateur est un block*/
+
+nav>ul li:hover .sous {
+    display: block;
+}
+
+
+/*Présentation du sous-menu côté texte*/
+
+.sous li {
+    float: none;
+    /*indique qu'un élément doit être retiré du flux normal et doit être placé sur le côté droit ou sur le côté gauche de son conteneur*/
+    width: 100%;
+    text-align: left;
+    /*Position du texte dans le sous-menu (le texte est à gauche dans notre cas)*/
+}
+
+
+/*Présentation du sous-menu (taille des bordure et barre en-dessous du texte)*/
+
+.sous a {
+    padding: 10px 16px;
+    /*Ecart de remplissage sur les 4 côtés de chaque emplacement d'écriture dans le sous-menu*/
+    border-bottom: none;
+    /*Bordure en-dessous du texte dans le sous menu*/
+    color: black;
+    /*Couleur du texte dans le sous-menu*/
+}
+
+
+/*Partie quand on passe avec la souris dans le sous-menu*/
+
+.sous a:hover {
+    border-bottom: none;
+    /*Bordure en-dessous du texte dans le sous menu quand on passe dessus avec la souris grâce au (:hover)*/
+}
+
+
+/*Partie cosmétique visible dans le menu principale*/
+
+.deco>a::after {
+    /*Ajoute des élément cosmétique (flèche par exemple) après le lien (::after) et / ou avant si on met (::before)*/
+    content: " ▼";
+    /*Utiliser avec les pseudo-éléments (::before et ::after) afin de générer le contenu d'un élément qui est le suivant dans notre cas : " ▼" (= espace + flèche vers le bas)*/
+    font-size: 15px;
+    /*police de la flèche*/
+}
+
+span {
+    visibility: hidden;
+    /*Quand la "visibility" est définie "hidden" cela signifie que La boîte est invisible (totalement transparente, rien n'est dessiné) mais continue d'avoir un impact sur la disposition.*/
+}
+
+img:hover+span {
+    visibility: visible;
+    /*"visibility" signifie le span définie sera visible ou non quand on passe la souris sur l'image en question*/
+}
+
+img {
+    display: block;
+    /*Définie que l'image est un "block", c'est le type d'affichage pour le rendu d'un élément qui est l'image dans notre cas*/
+    margin-left: 24%;
+    /*"margin-left" signifie la marge à gauche qui permet de décaler l'image par rapport à cette marge*/
+}

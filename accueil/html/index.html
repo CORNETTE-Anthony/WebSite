@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!-- "DOCTYPE" définit le type de document"-->
+<html lang="fr">
+<!--Définit la langue du fichier HTML-->
+
+<head>
+    <!--Signifie que toute cette partie va se situer dans l'en-tête-->
+    <meta charset="UTF-8">
+    <!-- Définie l'encodage des caractères-->
+    <meta name="energie verte" content="Voici des informations correspondantes aux énergies vertes">
+    <!--Ce qu'on va retrouver quand on lance une recherche du site-->
+    <title>Projet : Energie verte</title>
+    <!-- Titre écrit dans l'onglet de la page-->
+    <link href="../css/style_index.css" rel="stylesheet" media="all" type="text/css">
+    <!-- Ce link permet de dire à cette page HTML d'aller chercher le fichier "style_index.css" pour la partie graphique de cette page    
+             -> href" spécialise la cible du lien (nom du fichier par exemple)
+             -> rel signifie la relation du fichier, dans notre cas c'est une feuille de style
+             -> media = l'utilsation du stylesheet "all" signifie pour tout alors qu'il y a aussi "print" pour l'imprimante par exemple
+             -> type = Dans notre cas,c'est un type "texte" qui utilise le langage "CSS"-->
+    <link rel="icon" type="image/png" sizes="16x11" href="../image/logo_favicon.png">
+    <!-- Ce link permet de mettre un favicon de type image en forme "png" et de taille 16x11 pixels et cherche l'icon nommé "logo_favicon.png" dans le dossier "image" (icon qui se situe à gauche des onglets)-->
+</head>
+<!--Signifie que toute la partie ci-dessous se situait dans l'en-tête-->
+
+<body>
+    <!--Signifie que tout cette partie va se situer dans le corps-->
+    <nav>
+        <!--Signifie que tout cette partie va se situer dans la navigation-->
+        <ul>
+            <!--"ul" signifie "dossier", dans notre cas toute la partie ci-dessous fait partie de ce dossier-->
+            <li class="deco">
+                <!--"li" signifie "puce" et est nommé par la classe "deco", dans notre cas toute la partie ci-dessous fait partie de cette puce qui elle-même fait partie du dossier "ul" ci-dessus-->
+                <a class="deroulant" href="#">Accueil</a>
+                <!--"a" permet de créer un hyperlien et "a" est nommé par la classe "deroulant" / quand "href = #" alors cela signifie que le lien est la page où il se trouve qui dans notre cas est la page "Accueil"-->
+                <ul class="sous">
+                    <!--"ul" signifie "dossier" qui est nommé par la classe "sous", dans notre cas toute la partie ci-dessous fait partie de ce dossier-->
+                    <!--La signification de ce qui est écrit ci-dessous est : Dans la puce "li", il y a un hyperlien "a" qui à pour hyperlien la page HTML "presentation.html" et pour titre "Présentation"-->
+                    <li><a href="presentation.html">Présentation</a></li>
+                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="consequences.html">Conséquences</a></li>
+                </ul>
+                <!--Signifie que le dossier nommé "sous" se termine à ce moment-là-->
+            </li>
+            <!--Signifie que la puce nommé "deco" se termine à ce moment-là-->
+        </ul>
+        <!--Signifie que le dossier général se termine à ce moment-là-->
+    </nav>
+    <!--Signifie que la navigation se termine à ce moment-là-->
+    <h1>Energie verte</h1>
+    <!-- hx (x = l'importance du titre 'h1', 'h2', etc) = permet de définir les titres et la taille comme sur libreoffice "Titre 1", "Titre 2" etc-->
+    <br>
+    <!-- Permet d'espacer les différentes parties (espace le paragraphe du titre par exemple) (= Saut de ligne) et "<br/>"" signifie "Allez à la ligne" -->
+    <p>Que représente l'énergie verte par rapport à la vie de tous les jours ?</p>
+    <!--"p" permet de définir un paragraphe-->
+    <br>
+    <p>
+        <a href="https://www.levert.ma/wp-content/uploads/2017/10/evertis-678x381.jpg">
+            <img src="../image/energie_verte.jpg" alt="Image d'énergie verte" target="_blank">
+            <!-- "img" permet d'importer une image    
+             -> "src" spécialise source de l'image (nom du fichier) => src="../image/energie_verte.jpg" signifie que je veux l'image ce trouvant dans le dossier "image" puis l'image nommé "energie_verte.jpg" / j'ai mis "../" car ça permet d'aller dans le fichier parent. Exemple: je suis dans le dossier 1a
+             -> "alt" permet au cas où l'image ne s'affiche, cela affiche le message définie
+             -> "target = _blank" permet d'ouvrir le lien définie dans "href" de "a" juste au-dessus dans un nouvel onglet-->
+            <span>Energie verte</span>
+            <!--Permet d'écrire le titre en dessous de l'image et grâce au CSS, on peut le rendre invisible quand on ne passe pas la souris dessus par exemple-->
+        </a>
+    </p>
+</body>
+
+</html>
+<!--Signifie la fin de la page HTML-->
